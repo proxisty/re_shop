@@ -34,6 +34,10 @@ python manage.py migrate
 
 python manage.py loaddata db.json
 
+Данные для входа:
+#### 1) Вход по http://127.0.0.1:8000/admin/ . Логин: remii; Пароль: remii
+#### 1) Вход по http://127.0.0.1:8000/store . Почта: proxy_none@mail.ru; Пароль: gbajynbq176
+----
 Выполнено:
 ----
 #### 1) каталог (иерархическое дерево категорий)
