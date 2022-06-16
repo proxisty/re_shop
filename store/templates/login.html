@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="p-3 m-3">
+        <div class="col-lg-5 rounded mx-auto border pt-4">
+            <div class="text-center col">
+
+                <img
+                        src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fstorage.bash.news%2F1%2F1%2F2%2F112104267D37C170.jpg&imgrefurl=https%3A%2F%2Fbash.news%2Fsputnik%2Faktualno%2F65255-dari-dobro-8088&tbnid=fFRkPfurGe37LM&vet=12ahUKEwjYrPmTk7H4AhXIBhAIHTJDANsQMygcegUIARCSAg..i&docid=Y-O2nxWlfJm9QM&w=700&h=506&q=%D0%B4%D0%BE%D0%B1%D1%80%D0%BE&ved=2ahUKEwjYrPmTk7H4AhXIBhAIHTJDANsQMygcegUIARCSAg"
+                        alt=""
+                        class="" style="height: 150px;">
+                <hr>
+            </div>
+            <h3 class="alert alert-light rounded-pill" style="text-align:center">Вход</h3>
+            <form action="/login" method="POST">
+
+                {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- email -->
+                <div class="form-group">
+                    <label for="">Почта</label>
+                    <input required type="email" name="email" id=""
+                           value="{{values.email}}"
+                           class=" form-control-sm form-control" placeholder="abc@gmail.com">
+                </div>
+
+
+                <!-- password -->
+                <div class="form-group">
+                    <label for="">Пароль</label>
+                    <input type="password"
+                           name="password"
+                           id=""
+                           class="form-control form-control-sm">
+                </div>
+
+                <!--Checkme button-->
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label d-grid gap-2" for="exampleCheck1">Запомнить</label>
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-sm btn-success col-lg-12">Вход</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
